@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://4u723oeci16t"]
+
+[ext_resource type="Texture2D" uid="uid://dw2qvpbi5frvn" path="res://textures/enemy/mrc_enemy.png" id="1_7k104"]
+[ext_resource type="Script" uid="uid://evhkxhjamarj" path="res://src/enemy.gd" id="1_8afxw"]
+[ext_resource type="PackedScene" uid="uid://bf0j6ykqxpsyu" path="res://scenes/combat/resource_bars.tscn" id="2_dxtal"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_8afxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7k104")
+
+[node name="ResourceController" parent="." instance=ExtResource("2_dxtal")]
+position = Vector2(-55, 66)

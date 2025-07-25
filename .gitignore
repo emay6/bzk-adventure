@@ -1,0 +1,4 @@
+*.tmp
+.godot/
+/addons/
+/android/

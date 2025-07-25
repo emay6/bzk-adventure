@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8govhpudexb2"]
+
+[ext_resource type="Script" uid="uid://bv8e4rmweo8j4" path="res://src/combat_ui.gd" id="1_qq4en"]
+
+[node name="CombatUI" type="CanvasLayer"]
+script = ExtResource("1_qq4en")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SkillButtonContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 550.0
+offset_right = 780.0
+offset_bottom = 610.0
+theme_override_constants/separation = 30
+
+[node name="Skill1Button" type="Button" parent="Control/SkillButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Skill 1"
+
+[node name="Skill2Button" type="Button" parent="Control/SkillButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Skill 2"
+
+[node name="Skill3Button" type="Button" parent="Control/SkillButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Skill 3"
+
+[node name="Skill4Button" type="Button" parent="Control/SkillButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Skill 4"
+
+[node name="Skill5Button" type="Button" parent="Control/SkillButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Ultimate
+"
+
+[connection signal="pressed" from="Control/SkillButtonContainer/Skill1Button" to="." method="_on_skill_1_button_pressed"]
+[connection signal="pressed" from="Control/SkillButtonContainer/Skill2Button" to="." method="_on_skill_2_button_pressed"]
+[connection signal="pressed" from="Control/SkillButtonContainer/Skill3Button" to="." method="_on_skill_3_button_pressed"]
+[connection signal="pressed" from="Control/SkillButtonContainer/Skill4Button" to="." method="_on_skill_4_button_pressed"]
+[connection signal="pressed" from="Control/SkillButtonContainer/Skill5Button" to="." method="_on_skill_5_button_pressed"]

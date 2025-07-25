@@ -1,0 +1,49 @@
+{
+	"0": [
+		{
+			"name": "Medal Fist",
+			"description": "Deal 5 damage. Deal 1 additional damage for each Medal.",
+			"cost": 0,
+			"params": [
+				0,
+				5,
+				1
+			]
+		},
+		{
+			"name": "Bronze Armor",
+			"description": "Block the next incoming attack.",
+			"cost": 5,
+			"params": [
+				1
+			]
+		},
+		{
+			"name": "Silver Lining",
+			"description": "Deal 12 damage.",
+			"cost": 7,
+			"params": [
+				0,
+				12
+			]
+		},
+		{
+			"name": "Gold Rush",
+			"description": "Deal 16 damage to random targets 3 times.",
+			"cost": 10,
+			"params": [
+				1,
+				16,
+				3
+			]
+		},
+		{
+			"name": "Midnight Steel",
+			"description": "Activate all other armor effects.",
+			"cost": 20,
+			"params": [
+				4
+			]
+		}
+	]
+}
