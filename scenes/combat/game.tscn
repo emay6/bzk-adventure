@@ -10,11 +10,11 @@ script = ExtResource("1_e2o6t")
 metadata/_edit_group_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_80nbo")]
-position = Vector2(200, 350)
+position = Vector2(582, 657)
 
 [node name="EnemyList" type="Node2D" parent="."]
 
 [node name="Enemy" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(952, 350)
+position = Vector2(1056, 657)
 
 [node name="CombatUI" parent="." instance=ExtResource("4_fc0e3")]

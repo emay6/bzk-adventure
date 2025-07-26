@@ -3,9 +3,14 @@ extends CanvasLayer
 var skill_buttons
 
 func _ready() -> void:
-	skill_buttons = $Control/SkillButtonContainer.get_children()
-	for i in range(skill_buttons.size()):
-		skill_buttons[i].text = GameManager.player_skills[i].name
+	
+	skill_buttons = [$Control/SkillButtonContainer/Skill1Rect/Skill1Button,
+	$Control/SkillButtonContainer/Skill2Rect/Skill2Button,
+	$Control/SkillButtonContainer/Skill3Rect/Skill3Button,
+	$Control/SkillButtonContainer/Skill4Rect/Skill4Button,
+	$Control/SkillButtonContainer/Skill5Rect/Skill5Button]
+	#for i in range(skill_buttons.size()):
+		#skill_buttons[i].text = GameManager.player_skills[i].name
 	
 	# signals
 	TurnManager.turn_changed.connect(_on_turn_changed)

@@ -9,8 +9,9 @@ script = ExtResource("1_onrkg")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(27, -297)
+scale = Vector2(3, 3)
 texture = ExtResource("2_lxv2u")
-flip_h = true
+centered = false
 
 [node name="ResourceController" parent="." instance=ExtResource("3_2iox7")]
-position = Vector2(-59, 54)

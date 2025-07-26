@@ -21,7 +21,24 @@ SceneManager="*res://src/global/scene_manager.gd"
 GameManager="*res://src/global/game_manager.gd"
 TurnManager="*res://src/global/turn_manager.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/size/borderless=false
+2d/size/resizable=true
+2d/size/mode=0
+2d/size/viewport_width=1920
+2d/canvas_textures/default_texture_filter=0
+2d/size/viewport_height=1080

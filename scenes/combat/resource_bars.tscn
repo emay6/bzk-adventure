@@ -1,23 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf0j6ykqxpsyu"]
+[gd_scene load_steps=5 format=3 uid="uid://bf0j6ykqxpsyu"]
 
 [ext_resource type="Script" uid="uid://cdkd06lglecom" path="res://src/resource_bars.gd" id="1_xtr2f"]
+[ext_resource type="Texture2D" uid="uid://dins6hpxahh1f" path="res://textures/ui/bar_empty.png" id="2_j1qyl"]
+[ext_resource type="Texture2D" uid="uid://davlmval7ckwp" path="res://textures/ui/hp_bar.png" id="3_kdv7u"]
+[ext_resource type="Texture2D" uid="uid://b17ebrkee67ai" path="res://textures/ui/ce_bar.png" id="4_3cy6b"]
 
 [node name="ResourceController" type="Node2D"]
 script = ExtResource("1_xtr2f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 120.0
-offset_bottom = 40.0
+offset_right = 288.0
+offset_bottom = 58.0
 theme_override_constants/separation = 10
 
-[node name="HealthBar" type="ProgressBar" parent="VBoxContainer"]
+[node name="HealthBar" type="TextureProgressBar" parent="VBoxContainer"]
+custom_minimum_size = Vector2(288, 24)
 layout_mode = 2
-size_flags_horizontal = 3
-step = 1.0
-show_percentage = false
+nine_patch_stretch = true
+texture_under = ExtResource("2_j1qyl")
+texture_progress = ExtResource("3_kdv7u")
 
-[node name="CEBar" type="ProgressBar" parent="VBoxContainer"]
+[node name="CEBar" type="TextureProgressBar" parent="VBoxContainer"]
+custom_minimum_size = Vector2(288, 24)
 layout_mode = 2
 size_flags_horizontal = 3
-step = 1.0
-show_percentage = false
+nine_patch_stretch = true
+texture_under = ExtResource("2_j1qyl")
+texture_progress = ExtResource("4_3cy6b")
