@@ -6,9 +6,14 @@ func _ready() -> void:
 	visibility_changed.connect(_on_visibility_changed)
 	
 	# initialize turn manager
-	TurnManager.player = $Player
-	TurnManager.enemy = $Enemy
-	TurnManager.set_player_turn()
+	# hard code players/enemies for now
+	var players: Array[Player] = [$Player]
+	var enemies: Array[Enemy] = [$Enemy]
+	TurnManager.setup(players, enemies)
+	$CombatUI.link_av()
+	
+	# start turn
+	TurnManager.next_turn()
 
 func _on_visibility_changed() -> void:
 	if has_node("CombatUI"):

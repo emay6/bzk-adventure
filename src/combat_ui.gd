@@ -2,6 +2,12 @@ extends CanvasLayer
 
 var skill_buttons
 
+# temporary av testing functions
+func link_av() -> void:
+	# hard code actors for test
+	$Control/ActionBar/Player1/ActionValue.setup(TurnManager.players[0])
+	$Control/ActionBar/Enemy1/ActionValue.setup(TurnManager.enemies[0])
+
 func _ready() -> void:
 	
 	skill_buttons = [$Control/SkillButtonContainer/Skill1Rect/Skill1Button,
@@ -13,7 +19,7 @@ func _ready() -> void:
 		#skill_buttons[i].text = GameManager.player_skills[i].name
 	
 	# signals
-	TurnManager.turn_changed.connect(_on_turn_changed)
+	TurnManager.turn_state_changed.connect(_on_turn_state_changed)
 
 func enable_skills() -> void:
 	for button in skill_buttons:
@@ -23,32 +29,31 @@ func disable_skills() -> void:
 	for button in skill_buttons:
 		button.disabled = true
 
-func _on_turn_changed(turn: TurnManager.TurnState):
-	if (turn == TurnManager.TurnState.PLAYER_TURN):
+func _on_turn_state_changed(new_turn: TurnManager.TurnState):
+	if (new_turn == TurnManager.TurnState.PLAYER):
 		enable_skills()
 	else:
 		disable_skills()
 
-func resolve_turn():
-	TurnManager.change_turn()
-	await get_tree().create_timer(1.0).timeout # simulate animation time
-
 func _on_skill_1_button_pressed() -> void:
-	print("Troy skill 1")
-	resolve_turn()
+	TurnManager.enemies[0].damage(5)
+	TurnManager.end_turn()
 
 func _on_skill_2_button_pressed() -> void:
-	print("Troy skill 2")
-	resolve_turn()
+	TurnManager.players[0].use_ce(5)
+	TurnManager.end_turn()
 
 func _on_skill_3_button_pressed() -> void:
-	print("Troy skill 3")
-	resolve_turn()
+	TurnManager.enemies[0].damage(12)
+	TurnManager.players[0].use_ce(7)
+	TurnManager.end_turn()
 
 func _on_skill_4_button_pressed() -> void:
-	print("Troy skill 4")
-	resolve_turn()
+	TurnManager.enemies[0].damage(16 * 3)
+	TurnManager.players[0].use_ce(10)
+	TurnManager.end_turn()
 
 func _on_skill_5_button_pressed() -> void:
-	print("Troy skill 5")
-	resolve_turn()
+	TurnManager.enemies[0].damage(5 + 12 + 16 * 3)
+	TurnManager.players[0].use_ce(20)
+	TurnManager.end_turn()

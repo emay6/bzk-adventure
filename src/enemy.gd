@@ -1,11 +1,16 @@
-extends Node2D
+class_name Enemy extends Actor
 
 func _ready() -> void:
+	# disable ce bar for enemies
+	$ResourceController/VBoxContainer/CEBar.visible = false
+	self.setup(300, 0, 100)
+	$ResourceController.setup(self.max_hp, 0)
+	
 	# signals
-	TurnManager.turn_changed.connect(_on_turn_changed)
+	TurnManager.turn_state_changed.connect(_on_turn_state_changed)
 
-func _on_turn_changed(turn: TurnManager.TurnState):
-	if turn == TurnManager.TurnState.ENEMY_TURN:
+func _on_turn_state_changed(turn: TurnManager.TurnState):
+	if turn == TurnManager.TurnState.ENEMY:
 		await get_tree().create_timer(1.0).timeout
-		print("Mr. C slaps Troy")
-		TurnManager.change_turn()
+		print("Smokin' Duck takes a puff from his cigar")
+		TurnManager.end_turn()
