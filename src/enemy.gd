@@ -13,4 +13,6 @@ func _on_turn_state_changed(turn: TurnManager.TurnState):
 	if turn == TurnManager.TurnState.ENEMY:
 		await get_tree().create_timer(1.0).timeout
 		print("Smokin' Duck takes a puff from his cigar")
+		TurnManager.players[0].damage(20)
+		TurnManager.players[0].flash_sprite()
 		TurnManager.end_turn()

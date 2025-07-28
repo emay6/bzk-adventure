@@ -39,3 +39,10 @@ func use_ce(amt: int):
 	
 	self.curr_ce -= amt
 	self.ce_bar.apply_ce_loss(amt)
+
+func flash_sprite():
+	for i in range(2):
+		$Sprite2D.visible = false
+		await get_tree().create_timer(0.05).timeout
+		$Sprite2D.visible = true
+		await get_tree().create_timer(0.05).timeout
