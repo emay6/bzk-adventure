@@ -1,0 +1,47 @@
+{
+	"MedalFist": {
+		"name": "Medal Fist",
+		"description": "Deal ^D damage. Deal ^M additional damage for each Medal. Gain 1 Medal.",
+		"ce_cost": 0,
+		"medal_cost": 0,
+		"medal_req": 0,
+		"damage": 5,
+		"magic": 1
+	},
+	"BronzeArmor": {
+		"name": "Bronze Armor",
+		"description": "Block the next incoming attack.",
+		"ce_cost": 5,
+		"medal_cost": 1,
+		"medal_req": 1
+	},
+	"SilverLining": {
+		"name": "Silver Lining",
+		"description": "Deal ^D damage.",
+		"ce_cost": 7,
+		"medal_cost": 0,
+		"medal_req": 2,
+		"damage": 12
+	},
+	"GoldRush": {
+		"name": "Gold Rush",
+		"description": "Deal ^D damage to random targets ^M times.",
+		"ce_cost": 10,
+		"medal_cost": 1,
+		"medal_req": 3,
+		"damage": 16,
+		"magic": 3
+	},
+	"MidnightSteel": {
+		"name": "Midnight Steel",
+		"description": "Activate all other armor effects.",
+		"ce_cost": 20,
+		"medal_cost": 4,
+		"medal_req": 4
+	},
+	"Wallop": {
+		"name": "Wallop",
+		"description": "Deal ^D damage.",
+		"damage": 20
+	}
+}

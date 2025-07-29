@@ -7,4 +7,4 @@ func setup(actor: Actor) -> void:
 	TurnManager.av_changed.connect(_update_av)
 
 func _update_av() -> void:
-	self.text = str(roundi(actor.current_av))
+	self.text = str(roundi(actor.character.current_av))

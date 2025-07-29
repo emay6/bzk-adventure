@@ -1,24 +1,43 @@
 extends Node
 
-const CHARACTERS_PATH: String = "res://data/characters.json"
-const CHARACTERS_SKILLS_PATH: String = "res://data/character_skills.json"
+const PLAYERS_PATH: String = "res://data/players.json"
+const SKILLS_PATH: String = "res://data/skills.json"
+const ENEMIES_PATH: String = "res://data/enemies.json"
 
 var _json: JSON = JSON.new()
-var player: Dictionary
-var player_skills: Array
+
+var _player_information: Dictionary
+var _enemy_information: Dictionary
+var _skill_information: Dictionary
 
 func _ready() -> void:
-	# grab character info
-	var characters = FileAccess.open(CHARACTERS_PATH, FileAccess.READ)
+	var players = FileAccess.open(PLAYERS_PATH, FileAccess.READ)
 	var res
-	if characters.is_open():
-		res = _json.parse(characters.get_as_text())
+	if players.is_open():
+		res = _json.parse(players.get_as_text())
 		if res == OK:
-			player = _json.data["0"] # hard coding troy for now
+			_player_information = _json.data 
+		players.close()
 	
-	# grab character skill info
-	var character_skills = FileAccess.open(CHARACTERS_SKILLS_PATH, FileAccess.READ)
-	if character_skills.is_open():
-		res = _json.parse(character_skills.get_as_text())
+	var skills = FileAccess.open(SKILLS_PATH, FileAccess.READ)
+	if skills.is_open():
+		res = _json.parse(skills.get_as_text())
 		if res == OK:
-			player_skills = _json.data["0"]
+			_skill_information = _json.data
+		skills.close()
+	
+	var enemies = FileAccess.open(ENEMIES_PATH, FileAccess.READ)
+	if enemies.is_open():
+		res = _json.parse(enemies.get_as_text())
+		if res == OK:
+			_enemy_information = _json.data
+		enemies.close()
+
+func get_skill_info(id: String) -> Dictionary:
+	return _skill_information[id]
+
+func get_player_info(id: String) -> Dictionary:
+	return _player_information[id]
+
+func get_enemy_info(id: String) -> Dictionary:
+	return _enemy_information[id]

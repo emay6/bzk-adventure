@@ -49,6 +49,7 @@ texture_pressed = ExtResource("3_5a3e2")
 texture_hover = ExtResource("4_u72tk")
 texture_disabled = ExtResource("3_5a3e2")
 stretch_mode = 0
+metadata/skill_id = 1
 
 [node name="Skill2Rect" type="TextureRect" parent="Control/SkillButtonContainer"]
 custom_minimum_size = Vector2(72, 72)
@@ -66,6 +67,7 @@ texture_pressed = ExtResource("3_5a3e2")
 texture_hover = ExtResource("4_u72tk")
 texture_disabled = ExtResource("3_5a3e2")
 stretch_mode = 0
+metadata/skill_id = 2
 
 [node name="Skill3Rect" type="TextureRect" parent="Control/SkillButtonContainer"]
 custom_minimum_size = Vector2(72, 72)
@@ -83,6 +85,7 @@ texture_pressed = ExtResource("3_5a3e2")
 texture_hover = ExtResource("4_u72tk")
 texture_disabled = ExtResource("3_5a3e2")
 stretch_mode = 0
+metadata/skill_id = 3
 
 [node name="Skill4Rect" type="TextureRect" parent="Control/SkillButtonContainer"]
 custom_minimum_size = Vector2(72, 72)
@@ -100,6 +103,7 @@ texture_pressed = ExtResource("3_5a3e2")
 texture_hover = ExtResource("4_u72tk")
 texture_disabled = ExtResource("3_5a3e2")
 stretch_mode = 0
+metadata/skill_id = 4
 
 [node name="Skill5Rect" type="TextureRect" parent="Control/SkillButtonContainer"]
 custom_minimum_size = Vector2(72, 72)
@@ -117,6 +121,7 @@ texture_pressed = ExtResource("3_5a3e2")
 texture_hover = ExtResource("4_u72tk")
 texture_disabled = ExtResource("3_5a3e2")
 stretch_mode = 0
+metadata/skill_id = 5
 
 [node name="ActionBar" type="HBoxContainer" parent="Control"]
 layout_mode = 0
@@ -164,9 +169,3 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="pressed" from="Control/SkillButtonContainer/Skill1Rect/Skill1Button" to="." method="_on_skill_1_button_pressed"]
-[connection signal="pressed" from="Control/SkillButtonContainer/Skill2Rect/Skill2Button" to="." method="_on_skill_2_button_pressed"]
-[connection signal="pressed" from="Control/SkillButtonContainer/Skill3Rect/Skill3Button" to="." method="_on_skill_3_button_pressed"]
-[connection signal="pressed" from="Control/SkillButtonContainer/Skill4Rect/Skill4Button" to="." method="_on_skill_4_button_pressed"]
-[connection signal="pressed" from="Control/SkillButtonContainer/Skill5Rect/Skill5Button" to="." method="_on_skill_5_button_pressed"]

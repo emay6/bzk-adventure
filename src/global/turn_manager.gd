@@ -5,9 +5,10 @@ enum TurnState {
 	ENEMY
 }
 
-signal turn_state_changed(new_state)
-signal actor_changed(new_actor)
+signal turn_state_changed(new_state: TurnState)
+signal actor_changed(new_actor: Actor)
 signal av_changed
+signal skill_used(skill_name: String)
 
 const AV_CONSTANT: float = 10000.0
 
@@ -28,23 +29,23 @@ func _get_next_actor() -> Actor:
 	var lowest_av = 9999
 	var next_actor: Actor
 	for p in players:
-		if p.current_av < lowest_av:
-			lowest_av = p.current_av
+		if p.character.current_av < lowest_av:
+			lowest_av = p.character.current_av 
 			next_actor = p
 	for e in enemies:
-		if e.current_av < lowest_av:
-			lowest_av = e.current_av
+		if e.character.current_av < lowest_av:
+			lowest_av = e.character.current_av
 			next_actor = e
 	
 	return next_actor
 
 func next_turn() -> void:
 	var next_actor = _get_next_actor()
-	var next_actor_av = next_actor.current_av
+	var next_actor_av = next_actor.character.current_av
 	
 	# update avs of all actors
-	players.map(func(p): p.current_av -= next_actor_av)
-	enemies.map(func(e): e.current_av -= next_actor_av)
+	players.map(func(p): p.character.current_av -= next_actor_av)
+	enemies.map(func(e): e.character.current_av -= next_actor_av)
 	av_changed.emit()
 	
 	# update turn state
@@ -58,21 +59,9 @@ func next_turn() -> void:
 	actor_changed.emit(current_actor)
 
 func end_turn() -> void:
-	current_actor.current_av = current_actor.base_av
+	current_actor.character.current_av = current_actor.character.base_av
 	next_turn()
 
-#func set_player_turn():
-	#print("player turn start")
-	#current_turn = TurnState.PLAYER_TURN
-	#turn_changed.emit(current_turn)
-#
-#func set_enemy_turn():
-	#print("enemy turn start")
-	#current_turn = TurnState.ENEMY_TURN
-	#turn_changed.emit(current_turn)
-#
-#func change_turn():
-	#if current_turn == TurnState.PLAYER_TURN:
-		#set_enemy_turn()
-	#else:
-		#set_player_turn()
+# hard coded for 1v1s for now
+func get_target(is_player: bool) -> Actor:
+	return self.players[0] if is_player else self.enemies[0]
