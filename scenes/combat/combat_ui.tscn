@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8govhpudexb2"]
+[gd_scene load_steps=13 format=3 uid="uid://c8govhpudexb2"]
 
 [ext_resource type="Script" uid="uid://bv8e4rmweo8j4" path="res://src/combat_ui.gd" id="1_qq4en"]
 [ext_resource type="Texture2D" uid="uid://bwkhp1rabm8xo" path="res://textures/skill/medal_fist.png" id="2_6ikrv"]
@@ -11,8 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://dbw36megj673h" path="res://textures/character/troy_character_icon.png" id="9_npbv8"]
 [ext_resource type="Texture2D" uid="uid://ddvue5dttknrn" path="res://textures/enemy/smokinduck_enemy_icon.png" id="10_106yw"]
 [ext_resource type="Script" uid="uid://f32k7ao6dyx6" path="res://src/action_value.gd" id="10_sv3j0"]
+[ext_resource type="LabelSettings" uid="uid://dgis5wmpv7hcf" path="res://textures/fonts/common.tres" id="10_xmyc6"]
 
-[node name="CombatUI" type="CanvasLayer"]
+[node name="CombatUI" type="CanvasLayer" groups=["combat_ui"]]
 script = ExtResource("1_qq4en")
 
 [node name="Control" type="Control" parent="."]
@@ -139,6 +140,7 @@ texture = ExtResource("9_npbv8")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+label_settings = ExtResource("10_xmyc6")
 script = ExtResource("10_sv3j0")
 metadata/_custom_type_script = "uid://f32k7ao6dyx6"
 
@@ -151,6 +153,7 @@ texture = ExtResource("10_106yw")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+label_settings = ExtResource("10_xmyc6")
 script = ExtResource("10_sv3j0")
 metadata/_custom_type_script = "uid://f32k7ao6dyx6"
 
@@ -167,5 +170,6 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+label_settings = ExtResource("10_xmyc6")
 horizontal_alignment = 1
 vertical_alignment = 1

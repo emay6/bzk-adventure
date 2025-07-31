@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SceneManager="*res://src/global/scene_manager.gd"
 GameManager="*res://src/global/game_manager.gd"
 TurnManager="*res://src/global/turn_manager.gd"
+EnemyManager="*res://src/global/enemy_manager.gd"
 
 [display]
 
@@ -31,6 +32,10 @@ window/size/mode=3
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[gui]
+
+theme/custom_font="uid://b5jsiuwpj28nw"
 
 [rendering]
 

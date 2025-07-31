@@ -43,5 +43,27 @@
 		"name": "Wallop",
 		"description": "Deal ^D damage.",
 		"damage": 20
+	},
+	"Reload": {
+		"name": "Reload",
+		"description": "Loads bullet.",
+	},
+	"TakeAim": {
+		"name": "Take Aim",
+		"description": "Next shot deals double damage.",
+	},
+	"Fire": {
+		"name": "Fire",
+		"description": "Deal ^D damage.",
+		"damage": 15
+	},
+	"Calculate": {
+		"name": "Calculate",
+		"description": "Calculates next shot.",
+	},
+	"Headshot": {
+		"name": "Headshot",
+		"description": "Deal ^D damage.",
+		"damage": 30
 	}
 }

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://4u723oeci16t"]
 
 [ext_resource type="Script" uid="uid://evhkxhjamarj" path="res://src/character/enemy/enemy.gd" id="1_8afxw"]
-[ext_resource type="Texture2D" uid="uid://cvtjkma4reu7f" path="res://textures/enemy/smokinduck_enemy.png" id="2_8afxw"]
+[ext_resource type="Texture2D" uid="uid://body1uidscn0u" path="res://textures/enemy/beady_enemy.png" id="2_8afxw"]
 [ext_resource type="PackedScene" uid="uid://bf0j6ykqxpsyu" path="res://scenes/combat/resource_bars.tscn" id="2_dxtal"]
 
 [node name="Enemy" type="Node2D"]
@@ -9,7 +9,7 @@ script = ExtResource("1_8afxw")
 metadata/_custom_type_script = "uid://evhkxhjamarj"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(54, -408)
+position = Vector2(-35, -360)
 scale = Vector2(3, 3)
 texture = ExtResource("2_8afxw")
 centered = false

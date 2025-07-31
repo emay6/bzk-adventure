@@ -4,7 +4,7 @@ func _ready() -> void:
 	# disable ce bar for enemies
 	$ResourceController/VBoxContainer/CEBar.visible = false
 	
-	self.setup(SmokinDuck.new())
+	self.setup(Beady.new())
 	$ResourceController.setup(character.max_hp, character.max_ce)
 	
 	# signals

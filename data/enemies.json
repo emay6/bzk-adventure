@@ -4,5 +4,11 @@
 		"name": "Smokin' Duck",
 		"max_hp": 300,
 		"speed": 100
+	},
+	"beady": {
+		"full_name": "Beady",
+		"name": "Beady",
+		"max_hp": 45,
+		"speed": 80
 	}
 }

@@ -19,12 +19,25 @@ func _ready() -> void:
 	TurnManager.skill_used.connect(_show_skill_name)
 
 func enable_skills() -> void:
-	for button in skill_buttons:
-		button.disabled = false
+	update_skill_availability()
 
 func disable_skills() -> void:
 	for button in skill_buttons:
 		button.disabled = true
+
+func update_skill_availability() -> void:
+	var player = TurnManager.players[0]
+	
+	for button in skill_buttons:
+		var skill_id = button.get_meta("skill_id")
+		var skill = player.character.skills[skill_id]
+		
+		# Check if skill can be used
+		if skill.has_method("can_use"):
+			var can_use = skill.can_use(player, TurnManager.enemies[0])
+			button.disabled = !can_use
+		else:
+			button.disabled = false
 
 func _on_turn_state_changed(new_turn: TurnManager.TurnState):
 	if (new_turn == TurnManager.TurnState.PLAYER):
